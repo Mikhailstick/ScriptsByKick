@@ -1,3 +1,6 @@
+for _, v in pairs({"POTIONS", "HAIR" }) do
+    game:GetService("ReplicatedStorage").Remotes.UseCode:FireServer(v); print(Redeemed!)
+end
 --[[
  .____                  ________ ___.    _____                           __                
  |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
