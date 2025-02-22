@@ -1,0 +1,21 @@
+local PlaceId = game.PlaceId
+ 
+if PlaceId ==  then
+
+
+
+elseif Placeid == then 
+
+
+
+else 
+
+local StarterGui = game:GetService("StarterGui")
+
+StarterGui:SetCore("SendNotification", {
+    Title = "Error!";
+    Text = "This Place doesn't supported!";
+    Duration = 10;
+})
+
+end
