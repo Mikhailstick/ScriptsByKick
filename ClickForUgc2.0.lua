@@ -1,4 +1,4 @@
-for _, v in pairs({"POTIONS", "HAIR" }) do
+for _, v in pairs({"POTIONS", "HAIR"}) do
     game:GetService("ReplicatedStorage").Remotes.UseCode:FireServer(v); print(Redeemed!)
 end
 --[[
