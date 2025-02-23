@@ -4,6 +4,14 @@ if PlaceId == 8712817601 then
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Mikhailstick/ScriptsByKick/refs/heads/main/Barrysrun"))()
 
+elseif PlaceId == 8305160617 then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Mikhailstick/ScriptsByKick/refs/heads/main/L2LC"))()
+
+elseif PlaceId == 8305337434 then
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Mikhailstick/ScriptsByKick/refs/heads/main/L2LC"))()
+
 else 
 
 local StarterGui = game:GetService("StarterGui")
