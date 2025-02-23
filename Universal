@@ -1,12 +1,8 @@
 local PlaceId = game.PlaceId
  
-if PlaceId ==  then
+if PlaceId == 8712817601 then
 
-
-
-elseif Placeid == then 
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Mikhailstick/ScriptsByKick/refs/heads/main/Barrysrun"))()
 
 else 
 
@@ -14,7 +10,7 @@ local StarterGui = game:GetService("StarterGui")
 
 StarterGui:SetCore("SendNotification", {
     Title = "Error!";
-    Text = "This Place doesn't supported!";
+    Text = "This Place doesn't support!";
     Duration = 10;
 })
 
