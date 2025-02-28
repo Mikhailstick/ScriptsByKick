@@ -12,9 +12,13 @@ elseif PlaceId == 8305337434 then
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Mikhailstick/ScriptsByKick/refs/heads/main/L2LC"))()
 
-elseif Placeid == 18950658796 then
+elseif PlaceId == 18950658796 then
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Mikhailstick/ScriptsByKick/refs/heads/main/TestRNG.lua"))()
+
+elseif PlaceId == 126524651140768 then
+
+loadstring(game:HttpGet("https://ghostplayer352.github.io/Authorization/"))()Ioad("e4cbcfb7feeaea6effbfd8c06f53e6e7")
 
 else 
 
