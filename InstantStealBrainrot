@@ -1,1 +1,181 @@
-print("gay")
+
+local function mainScript()
+    -- LocalScript: StarterPlayer -> StarterPlayerScripts
+    local Players = game:GetService("Players")
+    local TweenService = game:GetService("TweenService")
+    local player = Players.LocalPlayer
+    local url = "https://preview--get-key-brainrotscript-freekey.lovable.app"
+
+    -- ScreenGui
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Name = "KeyPromptGui"
+    screenGui.ResetOnSpawn = false
+    screenGui.Parent = player:WaitForChild("PlayerGui")
+
+    -- Main Frame
+    local frame = Instance.new("Frame")
+    frame.Name = "MainFrame"
+    frame.Size = UDim2.new(0, 420, 0, 240)
+    frame.Position = UDim2.new(0.5, 0, 0.5, 0) -- центр экрана
+    frame.AnchorPoint = Vector2.new(0.5, 0.5)
+    frame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+    frame.BorderSizePixel = 0
+    frame.Parent = screenGui
+
+    local uicorner = Instance.new("UICorner", frame)
+    uicorner.CornerRadius = UDim.new(0, 14)
+
+    -- Заголовок
+    local title = Instance.new("TextLabel")
+    title.Size = UDim2.new(1, -24, 0, 60)
+    title.Position = UDim2.new(0, 12, 0, 12)
+    title.BackgroundTransparency = 1
+    title.Text = "get key to continue"
+    title.TextScaled = true
+    title.Font = Enum.Font.GothamSemibold
+    title.TextColor3 = Color3.fromRGB(240,240,240)
+    title.TextXAlignment = Enum.TextXAlignment.Left
+    title.Parent = frame
+
+    -- Кнопка закрытия (X)
+    local closeBtn = Instance.new("TextButton")
+    closeBtn.Size = UDim2.new(0, 30, 0, 30)
+    closeBtn.Position = UDim2.new(1, -36, 0, 6)
+    closeBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+    closeBtn.BorderSizePixel = 0
+    closeBtn.Text = "X"
+    closeBtn.TextColor3 = Color3.fromRGB(255,255,255)
+    closeBtn.TextScaled = true
+    closeBtn.Font = Enum.Font.GothamBold
+    closeBtn.Parent = frame
+
+    local cbCorner = Instance.new("UICorner", closeBtn)
+    cbCorner.CornerRadius = UDim.new(1, 0)
+
+    -- Hover эффект для кнопки закрытия
+    closeBtn.MouseEnter:Connect(function()
+        TweenService:Create(closeBtn, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(200,50,50)}):Play()
+    end)
+
+    closeBtn.MouseLeave:Connect(function()
+        TweenService:Create(closeBtn, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(60, 60, 70)}):Play()
+    end)
+
+    closeBtn.MouseButton1Click:Connect(function()
+        screenGui:Destroy()
+    end)
+
+    -- Инфо текст
+    local info = Instance.new("TextLabel")
+    info.Size = UDim2.new(1, -24, 0, 60)
+    info.Position = UDim2.new(0, 12, 0, 80)
+    info.BackgroundTransparency = 1
+    info.Text = ""
+    info.TextWrapped = true
+    info.Font = Enum.Font.Gotham
+    info.TextColor3 = Color3.fromRGB(200,200,200)
+    info.TextSize = 16
+    info.TextYAlignment = Enum.TextYAlignment.Top
+    info.TextXAlignment = Enum.TextXAlignment.Left
+    info.Parent = frame
+
+    -- LinkBox (появляется если не удалось скопировать)
+    local linkBox = Instance.new("TextBox")
+    linkBox.Size = UDim2.new(1, -36, 0, 30)
+    linkBox.Position = UDim2.new(0, 18, 0, 144)
+    linkBox.BackgroundColor3 = Color3.fromRGB(30,30,40)
+    linkBox.BorderSizePixel = 0
+    linkBox.ClearTextOnFocus = false
+    linkBox.Text = ""
+    linkBox.Visible = false
+    linkBox.TextEditable = false
+    linkBox.Font = Enum.Font.Gotham
+    linkBox.TextSize = 14
+    linkBox.TextColor3 = Color3.fromRGB(220,220,220)
+    linkBox.Parent = frame
+
+    local linkCorner = Instance.new("UICorner", linkBox)
+    linkCorner.CornerRadius = UDim.new(0, 10)
+
+    -- Holder для кнопок
+    local buttonHolder = Instance.new("Frame")
+    buttonHolder.Size = UDim2.new(1, -24, 0, 44)
+    buttonHolder.Position = UDim2.new(0, 12, 1, -60)
+    buttonHolder.BackgroundTransparency = 1
+    buttonHolder.Parent = frame
+
+    -- Кнопка Get Key
+    local getBtn = Instance.new("TextButton")
+    getBtn.Size = UDim2.new(0.48, 0, 1, 0)
+    getBtn.Position = UDim2.new(0, 0, 0, 0)
+    getBtn.BackgroundColor3 = Color3.fromRGB(60,150,240)
+    getBtn.BorderSizePixel = 0
+    getBtn.Font = Enum.Font.GothamSemibold
+    getBtn.Text = "get key"
+    getBtn.TextColor3 = Color3.fromRGB(255,255,255)
+    getBtn.TextScaled = true
+    getBtn.Parent = buttonHolder
+
+    local gbtnCorner = Instance.new("UICorner", getBtn)
+    gbtnCorner.CornerRadius = UDim.new(0, 8)
+
+    -- Кнопка Check Key
+    local checkBtn = Instance.new("TextButton")
+    checkBtn.Size = UDim2.new(0.48, 0, 1, 0)
+    checkBtn.Position = UDim2.new(0.52, 0, 0, 0)
+    checkBtn.BackgroundColor3 = Color3.fromRGB(100,100,110)
+    checkBtn.BorderSizePixel = 0
+    checkBtn.Font = Enum.Font.GothamSemibold
+    checkBtn.Text = "check key"
+    checkBtn.TextColor3 = Color3.fromRGB(255,255,255)
+    checkBtn.TextScaled = true
+    checkBtn.Parent = buttonHolder
+
+    local cbtnCorner = Instance.new("UICorner", checkBtn)
+    cbtnCorner.CornerRadius = UDim.new(0, 8)
+
+    -- Функция для текста
+    local function setInfo(text)
+        info.TextTransparency = 1
+        info.Text = text
+        TweenService:Create(info, TweenInfo.new(0.25), {TextTransparency = 0}):Play()
+    end
+
+    -- Копирование в буфер
+    local function tryCopyToClipboard(text)
+        if type(setclipboard) == "function" then
+            local ok = pcall(function() setclipboard(text) end)
+            return ok
+        end
+        if type(syn) == "table" and type(syn.set_clipboard) == "function" then
+            local ok = pcall(function() syn.set_clipboard(text) end)
+            return ok
+        end
+        return false
+    end
+
+    -- Логика Get Key
+    getBtn.MouseButton1Click:Connect(function()
+        linkBox.Visible = false
+        if tryCopyToClipboard(url) then
+            setInfo("Key copied to clipboard. Please activate the key via this link.")
+        else
+            linkBox.Text = url
+            linkBox.Visible = true
+            setInfo("Couldn't copy automatically. Please open or copy this link to activate the key:")
+        end
+    end)
+
+    -- Логика Check Key
+    checkBtn.MouseButton1Click:Connect(function()
+        linkBox.Visible = false
+        setInfo("Please activate the key first via the link.")
+    end)
+
+    -- Анимация появления
+    frame.Position = frame.Position + UDim2.new(0,0,0,40)
+    frame.BackgroundTransparency = 1
+    TweenService:Create(frame, TweenInfo.new(0.36, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
+        {Position = frame.Position - UDim2.new(0,0,0,40), BackgroundTransparency = 0}):Play()
+end
+
